@@ -2,6 +2,19 @@ package org.example;
 
 
 
+//Linked list is just bunch of nodes
+//where each node has some data and knows where the next node is located
+
+//operations
+//insertAtFirst
+//insertAtLast
+//insertAtIndex
+//deleteAtFirst
+//deleteAtLast
+//deleteAtIndex
+//existsOrNot
+//iterate
+
 
 public class MyLinkedList {
 
@@ -22,7 +35,6 @@ public class MyLinkedList {
             size++;
             return;
         }
-
         newNode.next = head;
         head = newNode;
         size++;
@@ -46,24 +58,26 @@ public class MyLinkedList {
     }
 
     public void insert(int data, int index){
-
-
-
-    }
-
-
-
-
-
-    public void offer(int data){
-
-    }
-
-    public int poll(){
-        if(head == null){
-            System.out.println("the linked list is empty");
+        if(index == 0){
+            insertAtFirst(data);
+            return;
         }
+        if(index == size){
+            insertAtLast(data);
+            return;
+        }
+        if(index > size){
+            System.out.println("index out of bound");
+        }
+
+
+
+
+
+
+
     }
+
 
     private class Node{
         int data;
